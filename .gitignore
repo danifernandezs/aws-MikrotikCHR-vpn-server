@@ -1,0 +1,7 @@
+# Time to ignore files
+
+# Terraform Infraestuctura state files
+*.tfstate*
+
+# AWS Credentials File
+*credentials
