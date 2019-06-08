@@ -1,7 +1,13 @@
 # Time to ignore files
 
-# Terraform Infraestuctura state files
+# Terraform Infrastucture state files
 *.tfstate*
+
+# Terraform init folder, modules and providers
+.terraform
+
+# Ignoring tfvars file
+*.tfvars
 
 # AWS Credentials File
 *credentials
