@@ -106,3 +106,10 @@ variable "Internet_Gateway_Description_Tag" {
   description = "Desired Description, as a tag"
   default     = "Internet Gateway to attach it with the Public Subnets"
 }
+
+// Key Pair Module
+
+variable "mikrotik_chr_key_pair_name" {
+  description = "Desired name for the imported Public Key"
+  default = "Mikrotik CHR"
+}

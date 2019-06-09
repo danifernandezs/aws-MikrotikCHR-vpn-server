@@ -37,3 +37,6 @@ Private_Subnet_Description_Tag  = "PRIVATE_SUBNET_DESCRIPTION_TAG"
 // Internet Gateway Module
 Internet_Gateway_Name_Tag         = "INTERNET_GATEWAY_NAME_TAG"
 Internet_Gateway_Description_Tag  = "INTERNET_GATEWAY_DESCRIPTION_TAG"
+
+// Key Pair Module
+mikrotik_chr_key_pair_name = "KEY_PAIR_NAME"

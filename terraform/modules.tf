@@ -64,3 +64,10 @@ module "deploy_internet_gateway" {
   Internet_Gateway_Name_Tag        = "${var.Internet_Gateway_Name_Tag}"
   Internet_Gateway_Description_Tag = "${var.Internet_Gateway_Description_Tag}"
 }
+
+// Time to import Public Key
+
+module "import_public_key" {
+  source = "modules/key_pair"
+  mikrotik_chr_key_pair_name = "${var.mikrotik_chr_key_pair_name}"
+}
