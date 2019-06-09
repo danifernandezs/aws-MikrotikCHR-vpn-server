@@ -11,3 +11,6 @@
 
 # AWS Credentials File
 *credentials
+
+# Ignoring the public key
+*.pub
