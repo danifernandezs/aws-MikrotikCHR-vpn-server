@@ -111,5 +111,61 @@ variable "Internet_Gateway_Description_Tag" {
 
 variable "mikrotik_chr_key_pair_name" {
   description = "Desired name for the imported Public Key"
-  default = "Mikrotik CHR"
+  default     = "Mikrotik CHR"
+}
+
+// Security Groups Module
+
+// Segurity Group for the Public Subnet
+
+variable "sg_public_subnet_name" {
+  description = "Name for the Security Group that will be attached with the Public Subnet"
+  default     = "SG - Public Mikrotik CHR"
+}
+
+variable "sg_public_subnet_description" {
+  description = "Description for the Security Group that will be attached with the Public Subnet"
+  default     = "Security Group Attached to the Mikrotik CHR Public Subnet"
+}
+
+variable "sg_public_subnet_revoke_rules" {
+  description = "Allow Terraform to revoke all rules, ingress and egress"
+  default     = true
+}
+
+variable "SG_Public_Subnet_Name_Tag" {
+  description = "Name Tag for the Security Group that will be attached with the Public Subnet"
+  default     = "Security Group - Public Subnet - Mikrotik CHR"
+}
+
+variable "SG_Public_Subnet_Description_Tag" {
+  description = "Description Tag for the Security Group that will be attached with the Public Subnet"
+  default     = "Security Group Attached to the Public Subnet, for Mikrotik CHR"
+}
+
+// Segurity Group for the Private Subnet
+
+variable "sg_private_subnet_name" {
+  description = "Name for the Security Group that will be attached with the Private Subnet"
+  default     = "SG - Private Mikrotik CHR"
+}
+
+variable "sg_private_subnet_description" {
+  description = "Description for the Security Group that will be attached with the Private Subnet"
+  default     = "Security Group Attached to the Mikrotik CHR Private Subnet"
+}
+
+variable "sg_private_subnet_revoke_rules" {
+  description = "Allow Terraform to revoke all rules, ingress and egress"
+  default     = true
+}
+
+variable "SG_Private_Subnet_Name_Tag" {
+  description = "Name Tag for the Security Group that will be attached with the Private Subnet"
+  default     = "Security Group - Private Subnet - Mikrotik CHR"
+}
+
+variable "SG_Private_Subnet_Description_Tag" {
+  description = "Description Tag for the Security Group that will be attached with the Private Subnet"
+  default     = "Security Group Attached to the Private Subnet, for Mikrotik CHR"
 }

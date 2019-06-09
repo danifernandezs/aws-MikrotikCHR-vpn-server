@@ -40,3 +40,18 @@ Internet_Gateway_Description_Tag  = "INTERNET_GATEWAY_DESCRIPTION_TAG"
 
 // Key Pair Module
 mikrotik_chr_key_pair_name = "KEY_PAIR_NAME"
+
+// Security Groups Module
+// Segurity Group for the Public Subnet
+sg_public_subnet_name = "PUBLIC_SG_NAME"
+sg_public_subnet_description = "PUBLIC_SG_DESCRIPTION"
+sg_public_subnet_revoke_rules = true
+SG_Public_Subnet_Name_Tag = "PUBLIC_SG_NAME_TAG"
+SG_Public_Subnet_Description_Tag = "PUBLIC_SG_DESCRIPTION_TAG"
+
+// Segurity Group for the Private Subnet
+sg_private_subnet_name = "PRIVATE_SG_NAME"
+sg_private_subnet_description = "PRIVATE_SG_DESCRIPTION"
+sg_private_subnet_revoke_rules = true
+SG_Private_Subnet_Name_Tag = "PRIVATE_SG_NAME_TAG"
+SG_Private_Subnet_Description_Tag = "PRIVATE_SG_DESCRIPTION_TAG"

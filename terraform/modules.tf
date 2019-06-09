@@ -68,6 +68,30 @@ module "deploy_internet_gateway" {
 // Time to import Public Key
 
 module "import_public_key" {
-  source = "modules/key_pair"
+  source                     = "modules/key_pair"
   mikrotik_chr_key_pair_name = "${var.mikrotik_chr_key_pair_name}"
+}
+
+// Creating Security Groups
+
+module "security_groups" {
+  source           = "modules/security_groups"
+  mikrotik_chr_vpc = "${module.deploy_vpc.Deployed_VPC_ID}"
+
+  // Common Tags
+  common_tags = "${var.common_tags}"
+
+  // Segurity Group for the Public Subnet
+  sg_public_subnet_name            = "${var.sg_public_subnet_name}"
+  sg_public_subnet_description     = "${var.sg_public_subnet_description}"
+  sg_public_subnet_revoke_rules    = true
+  SG_Public_Subnet_Name_Tag        = "${var.SG_Public_Subnet_Name_Tag}"
+  SG_Public_Subnet_Description_Tag = "${var.SG_Public_Subnet_Description_Tag}"
+
+  // Segurity Group for the Private Subnet
+  sg_private_subnet_name            = "${var.sg_private_subnet_name}"
+  sg_private_subnet_description     = "${var.sg_private_subnet_description}"
+  sg_private_subnet_revoke_rules    = true
+  SG_Private_Subnet_Name_Tag        = "${var.SG_Private_Subnet_Name_Tag}"
+  SG_Private_Subnet_Description_Tag = "${var.SG_Private_Subnet_Description_Tag}"
 }
