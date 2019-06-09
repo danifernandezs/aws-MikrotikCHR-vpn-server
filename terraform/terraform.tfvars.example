@@ -1,0 +1,39 @@
+// AWS Provider Variables
+aws_region              = "AWS_REGION"
+aws_credentials_profile = "CREDENTIALS_PROFILE"
+
+// Common Tags
+common_tags {
+  Environment = "ENVIRONMENT_TAG"
+  Project     = "PROJECT_TAG"
+  Managed_by  = "MANAGED_BY_TAG"
+  }
+
+// VPC Module Variables Values
+vpc_cidr_block              = "VPC_CIDR_BLOCK"
+enable_dns_on_vpc           = true/false
+enable_dns_hostnames_on_vpc = true/false
+
+// VPC Module Tags Values
+VPC_Name_Tag        = "VPC_NAME_TAG"
+VPC_Description_Tag = "VPC_DESCRIPTION_TAG"
+
+// Public Subnet Variables Values
+public_subnet_cidr_block        = "PUBLIC_SUBNET_CIDR_BLOCK"
+public_subnet_availability_zone = "AVAILABILITY_ZONE"
+
+// Public Subnet Module Tags Values
+Public_Subnet_Name_Tag        = "PUBLIC_SUBNET_NAME_TAG"
+Public_Subnet_Description_Tag = "PUBLIC_SUBNET_DESCRIPTION_TAG"
+
+// Private Subnet Variables Values
+private_subnet_cidr_block         = "PRIVATE_SUBNET_CIDR_BLOCK"
+private_subnet_availability_zone  = "AVAILABILITY_ZONES"
+
+// Private Subnet Module Tags Values
+Private_Subnet_Name_Tag         = "PRIVATE_SUBNET_NAME_TAG"
+Private_Subnet_Description_Tag  = "PRIVATE_SUBNET_DESCRIPTION_TAG"
+
+// Internet Gateway Module
+Internet_Gateway_Name_Tag         = "INTERNET_GATEWAY_NAME_TAG"
+Internet_Gateway_Description_Tag  = "INTERNET_GATEWAY_DESCRIPTION_TAG"
