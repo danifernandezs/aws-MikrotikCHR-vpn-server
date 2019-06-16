@@ -102,20 +102,34 @@ module "security_groups" {
   sg_private_subnet_egress_world_description = "${var.sg_private_subnet_egress_world_description}"
 
   // Ingress Rules for the Public Subnet
-  allow_sg_public_subnet_ingress_shh          = "${var.allow_sg_public_subnet_ingress_shh}"
-  sg_public_subnet_ingress_shh_description    = "${var.sg_public_subnet_ingress_shh_description}"
-  sg_public_subnet_ingress_shh_from_CIDR      = "${var.sg_public_subnet_ingress_shh_from_CIDR}"
-  allow_sg_public_subnet_ingress_web_ui       = "${var.allow_sg_public_subnet_ingress_web_ui}"
-  sg_public_subnet_ingress_web_ui_description = "${var.sg_public_subnet_ingress_web_ui_description}"
-  sg_public_subnet_ingress_web_ui_from_CIDR   = "${var.sg_public_subnet_ingress_web_ui_from_CIDR}"
-  allow_sg_public_subnet_ingress_winbox       = "${var.allow_sg_public_subnet_ingress_winbox}"
-  sg_public_subnet_ingress_winbox_description = "${var.sg_public_subnet_ingress_winbox_description}"
-  sg_public_subnet_ingress_winbox_from_CIDR   = "${var.sg_public_subnet_ingress_winbox_from_CIDR}"
-  allow_sg_public_subnet_ingress_vpn          = "${var.allow_sg_public_subnet_ingress_vpn}"
-  sg_public_subnet_ingress_vpn_description    = "${var.sg_public_subnet_ingress_vpn_description}"
-  sg_public_subnet_ingress_vpn_from_CIDR      = "${var.sg_public_subnet_ingress_vpn_from_CIDR}"
+  allow_sg_public_subnet_ingress_shh                        = "${var.allow_sg_public_subnet_ingress_shh}"
+  sg_public_subnet_ingress_shh_description                  = "${var.sg_public_subnet_ingress_shh_description}"
+  sg_public_subnet_ingress_shh_from_CIDR                    = "${var.sg_public_subnet_ingress_shh_from_CIDR}"
+  allow_sg_public_subnet_ingress_web_ui                     = "${var.allow_sg_public_subnet_ingress_web_ui}"
+  sg_public_subnet_ingress_web_ui_description               = "${var.sg_public_subnet_ingress_web_ui_description}"
+  sg_public_subnet_ingress_web_ui_from_CIDR                 = "${var.sg_public_subnet_ingress_web_ui_from_CIDR}"
+  allow_sg_public_subnet_ingress_winbox                     = "${var.allow_sg_public_subnet_ingress_winbox}"
+  sg_public_subnet_ingress_winbox_description               = "${var.sg_public_subnet_ingress_winbox_description}"
+  sg_public_subnet_ingress_winbox_from_CIDR                 = "${var.sg_public_subnet_ingress_winbox_from_CIDR}"
+  allow_sg_public_subnet_ingress_vpn                        = "${var.allow_sg_public_subnet_ingress_vpn}"
+  sg_public_subnet_ingress_vpn_description                  = "${var.sg_public_subnet_ingress_vpn_description}"
+  sg_public_subnet_ingress_vpn_from_CIDR                    = "${var.sg_public_subnet_ingress_vpn_from_CIDR}"
   sg_private_subnet_ingress_from_private_subnet_description = "${var.sg_private_subnet_ingress_from_private_subnet_description}"
 
   // Ingress Rules for the Private Subnet
   sg_private_subnet_ingress_from_mikrotik_description = "${var.sg_private_subnet_ingress_from_mikrotik_description}"
+}
+
+// Route Tables
+
+module "route_tables" {
+  source                           = "modules/route_tables"
+  mikrotik_chr_vpc                 = "${module.deploy_vpc.Deployed_VPC_ID}"
+  mikrotik_chr_internet_gateway_id = "${module.deploy_internet_gateway.Deployed_Internet_Gateway_ID}"
+
+  // Common Tags
+  common_tags = "${var.common_tags}"
+
+  public_subnet_route_table_Name_Tag        = "${var.public_subnet_route_table_Name_Tag}"
+  public_subnet_route_table_Description_Tag = "${var.public_subnet_route_table_Description_Tag}"
 }

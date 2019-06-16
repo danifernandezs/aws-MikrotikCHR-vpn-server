@@ -79,3 +79,7 @@ sg_private_subnet_ingress_from_private_subnet_description = "DESCRIPTION_FOR_INB
 
 // Ingress Rules for the Private Subnet
 sg_private_subnet_ingress_from_mikrotik_description = "DESCRIPTION_FOR_INBOUND_RULE_WITH_ORIGIN_FROM_MIKROTIK"
+
+// Route Tables Module
+public_subnet_route_table_Name_Tag = "PUBLIC_SUBNET_ROUTE_TABLE_NAME_TAG"
+public_subnet_route_table_Description_Tag = "PUBLIC_SUBNET_ROUTE_TABLE_DESCRIPTION_TAG"

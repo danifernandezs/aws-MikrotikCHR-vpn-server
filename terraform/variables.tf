@@ -245,11 +245,23 @@ variable "sg_public_subnet_ingress_vpn_from_CIDR" {
 
 variable "sg_private_subnet_ingress_from_private_subnet_description" {
   description = "Description for the ingress rule, traffic from private subnet"
-  default = "All traffic from Private Subnet"
+  default     = "All traffic from Private Subnet"
 }
 
 // Ingress Rules for the Private Subnet
 variable "sg_private_subnet_ingress_from_mikrotik_description" {
   description = "Description for the ingress rule, applied to the private subnet"
-  default = "Allow all traffic from Mikrotik CHR"
+  default     = "Allow all traffic from Mikrotik CHR"
+}
+
+// Route Tables Module
+
+variable "public_subnet_route_table_Name_Tag" {
+  description = "Name Tag for the Public Subnet Route Table"
+  default     = "Public Subnet Route Table - To The World"
+}
+
+variable "public_subnet_route_table_Description_Tag" {
+  description = "Description Tag for the Public Subnet Route Table"
+  default     = "All traffic from Public Subnet to the world"
 }
