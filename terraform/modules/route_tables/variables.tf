@@ -26,3 +26,9 @@ variable "common_tags" {
 variable "mikrotik_chr_vpc" {
   description = "The VPC ID, imported from VPC Module"
 }
+
+// From Public Subnet Module
+
+variable "public_subnet_to_associate_the_route_table" {
+  description = "The Public Subnet ID, imported from Public Subnet Module"
+}
