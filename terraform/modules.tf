@@ -134,3 +134,9 @@ module "route_tables" {
   public_subnet_route_table_Description_Tag  = "${var.public_subnet_route_table_Description_Tag}"
   public_subnet_to_associate_the_route_table = "${module.deploy_public_subnet.Deployed_Public_Subnet_ID}"
 }
+
+// Elastic IP
+
+module "elastic_ip" {
+  source = "modules/instance_eip"
+}
