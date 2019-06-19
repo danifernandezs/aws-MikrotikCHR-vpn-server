@@ -265,3 +265,61 @@ variable "public_subnet_route_table_Description_Tag" {
   description = "Description Tag for the Public Subnet Route Table"
   default     = "All traffic from Public Subnet to the world"
 }
+
+// Mikrotik CHR Module
+
+// AMI, from marketplace
+// https://aws.amazon.com/marketplace/pp/B01E00PU50
+
+variable "mikrotik_chr_ami" {
+  description = "The AMI to use for the instance"
+}
+
+variable "mikrotik_availability_zone" {
+  description = "The AZ to start the instance in"
+}
+
+variable "mikrotik_chr_instance_type" {
+  description = "The type of instance to start"
+  default     = "t2.micro"
+}
+
+variable "mikrotik_chr_enable_disable_monitoring" {
+  description = "If true, the launched EC2 instance will have detailed monitoring enabled"
+  default     = true
+}
+
+variable "mikrotik_chr_volume_type" {
+  description = "The type of volume"
+  default     = "gp2"
+}
+
+variable "mikrotik_chr_volume_size" {
+  description = "The size of the volume in gibibytes (GiB)"
+  default     = 5
+}
+
+variable "mikrotik_chr_volume_delete_policy" {
+  description = "Whether the volume should be destroyed on instance termination."
+  default     = true
+}
+
+variable "Mikrotik_CHR_Instance_Name_Tag" {
+  description = "Desired Name Tag for the Mikrotik CHR Instance"
+  default     = "Mikrotik CHR"
+}
+
+variable "Mikrotik_CHR_Instance_Description_Tag" {
+  description = "Desired Description, as a tag"
+  default     = "Mikrotik CHR, used as VPN Server"
+}
+
+variable "Mikrotik_CHR_Instance_Volume_Name_Tag" {
+  description = "Desired Name Tag for the Mikrotik CHR Instance Volume"
+  default     = "Mikrotik CHR Volume"
+}
+
+variable "Mikrotik_CHR_Instance_Volume_Description_Tag" {
+  description = "Desired Description, as a tag"
+  default     = "Mikrotik CHR Volume, used as VPN Server"
+}

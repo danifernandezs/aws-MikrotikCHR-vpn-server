@@ -83,3 +83,16 @@ sg_private_subnet_ingress_from_mikrotik_description = "DESCRIPTION_FOR_INBOUND_R
 // Route Tables Module
 public_subnet_route_table_Name_Tag = "PUBLIC_SUBNET_ROUTE_TABLE_NAME_TAG"
 public_subnet_route_table_Description_Tag = "PUBLIC_SUBNET_ROUTE_TABLE_DESCRIPTION_TAG"
+
+// Mikrotik CHR Module
+mikrotik_chr_ami = "AMI_ID"
+mikrotik_availability_zone = "AVAILABILITY_ZONE"
+mikrotik_chr_instance_type = "INSTANCE_TYPE"
+mikrotik_chr_enable_disable_monitoring = true/false
+mikrotik_chr_volume_type = "VOLUME_TYPE"
+mikrotik_chr_volume_size = VOLUME_SYZE
+mikrotik_chr_volume_delete_policy = true/false
+Mikrotik_CHR_Instance_Name_Tag = "INSTANCE_NAME_TAG"
+Mikrotik_CHR_Instance_Description_Tag = "INSTANCE_DESCRIPTION"
+Mikrotik_CHR_Instance_Volume_Name_Tag = "INSTANCE_VOLUME_NAME_TAG"
+Mikrotik_CHR_Instance_Volume_Description_Tag = "INSTANCE_VOLUME_DESCRIPTION"

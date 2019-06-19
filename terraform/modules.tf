@@ -138,5 +138,31 @@ module "route_tables" {
 // Elastic IP
 
 module "elastic_ip" {
-  source = "modules/instance_eip"
+  source                   = "modules/instance_eip"
+  mikrotik_chr_instance_id = "${module.mikrotik_chr_instance.Deployed_Mikrotik_CHR_Instance_ID}"
+}
+
+// Mikrotik CHR Instance
+
+module "mikrotik_chr_instance" {
+  source                                 = "modules/mikrotik_instance"
+  mikrotik_chr_ami                       = "${var.mikrotik_chr_ami}"
+  mikrotik_availability_zone             = "${var.mikrotik_availability_zone}"
+  mikrotik_chr_instance_type             = "${var.mikrotik_chr_instance_type}"
+  mikrotik_chr_enable_disable_monitoring = "${var.mikrotik_chr_enable_disable_monitoring}"
+  mikrotik_chr_volume_type               = "${var.mikrotik_chr_volume_type}"
+  mikrotik_chr_volume_size               = "${var.mikrotik_chr_volume_size}"
+  mikrotik_chr_volume_delete_policy      = "${var.mikrotik_chr_volume_delete_policy}"
+  mikrotik_chr_key_name                  = "${var.mikrotik_chr_key_pair_name}"
+
+  mikrotik_chr_instance_security_group = "${module.security_groups.Deployed_SG_Public_Subnet_ID}"
+  mikrotik_chr_instance_subnet_id      = "${module.deploy_public_subnet.Deployed_Public_Subnet_ID}"
+
+  // Common Tags
+  common_tags = "${var.common_tags}"
+
+  Mikrotik_CHR_Instance_Name_Tag               = "${var.Mikrotik_CHR_Instance_Name_Tag}"
+  Mikrotik_CHR_Instance_Description_Tag        = "${var.Mikrotik_CHR_Instance_Description_Tag}"
+  Mikrotik_CHR_Instance_Volume_Name_Tag        = "${var.Mikrotik_CHR_Instance_Volume_Name_Tag}"
+  Mikrotik_CHR_Instance_Volume_Description_Tag = "${var.Mikrotik_CHR_Instance_Volume_Description_Tag}"
 }
